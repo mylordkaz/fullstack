@@ -16,7 +16,6 @@ function EditTodos({ todo }) {
           body: JSON.stringify(body),
         }
       );
-      setDescription('');
     } catch (err) {
       console.error(err.message);
     }

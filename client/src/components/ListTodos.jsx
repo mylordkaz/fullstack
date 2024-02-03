@@ -30,7 +30,7 @@ const ListTodos = () => {
   };
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [todos]);
 
   return (
     <div>
