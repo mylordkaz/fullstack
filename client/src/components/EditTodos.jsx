@@ -4,8 +4,8 @@ import { useState } from 'react';
 function EditTodos({ todo }) {
   const [description, setDescription] = useState(todo.description);
 
-  const editTodo = async (e) => {
-    e.preventDefault();
+  const editTodo = async () => {
+    //e.preventDefault();
     try {
       const body = { description };
       await fetch(
@@ -46,7 +46,7 @@ function EditTodos({ todo }) {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                // onClick={() => setDescription(todo.description)}
+                onClick={() => setDescription(todo.description)}
               ></button>
             </div>
 
