@@ -46,7 +46,7 @@ function EditTodos({ todo }) {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
+                // onClick={() => setDescription(todo.description)}
               ></button>
             </div>
 
