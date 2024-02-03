@@ -23,6 +23,6 @@ app.get('/', (req, res) => {
   res.send("What's up brooo ?!");
 });
 
-app.listen(process.env.BACK_PORT, () => {
-  console.log('Server run, port :${BACK_PORT}');
+app.listen(process.env.PORT, () => {
+  console.log('Server run, port :${PORT}');
 });
