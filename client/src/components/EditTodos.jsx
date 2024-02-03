@@ -4,8 +4,8 @@ import { useState } from 'react';
 function EditTodos({ todo }) {
   const [description, setDescription] = useState(todo.description);
 
-  const editTodo = async () => {
-    //e.preventDefault();
+  const editTodo = async (e) => {
+    e.preventDefault();
     try {
       const body = { description };
       await fetch(
