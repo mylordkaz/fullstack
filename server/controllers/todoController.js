@@ -38,6 +38,7 @@ const updateTodo = async (req, res) => {
     const description = req.body;
     await knex('todo').where({ todo_id: id }).update(description);
     res.send('todo was updated');
+    console.log(description);
   } catch (err) {
     console.error(err.message);
     res.status(500).send('Internal Server Error');
