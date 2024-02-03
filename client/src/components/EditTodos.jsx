@@ -2,7 +2,9 @@
 import { useState } from 'react';
 
 function EditTodos({ todos }) {
-  const [description, setDescription] = useState(todos.description);
+  const [description, setDescription] = useState(
+    todos ? todos.description : ''
+  );
 
   const editTodo = async (e) => {
     e.preventDefault();
