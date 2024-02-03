@@ -1,15 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
 
-function EditTodos({ todo }) {
-  const [description, setDescription] = useState(todo.description);
+function EditTodos({ todos }) {
+  const [description, setDescription] = useState(todos.description);
 
   const editTodo = async (e) => {
     e.preventDefault();
     try {
       const body = { description };
       await fetch(
-        `https://fullstack-todo-webapp.onrender.com/${todo.todo_id}`,
+        `https://fullstack-todo-webapp.onrender.com/todos/${todos.todo_id}`,
         {
           method: 'PUT',
           headers: { 'content-type': 'application/json' },
@@ -26,15 +26,15 @@ function EditTodos({ todo }) {
         type="button"
         className="btn btn-primary"
         data-bs-toggle="modal"
-        data-bs-target={`#id${todo.todo_id}`}
+        data-bs-target={`#id${todos.todo_id}`}
       >
         Edit
       </button>
 
       <div
         className="modal"
-        id={`id${todo.todo_id}`}
-        onClick={() => setDescription(todo.description)}
+        id={`id${todos.todo_id}`}
+        onClick={() => setDescription(todos.description)}
       >
         <div className="modal-dialog">
           <div className="modal-content">
@@ -44,7 +44,7 @@ function EditTodos({ todo }) {
                 type="button"
                 className="btn-close"
                 data-bs-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
+                onClick={() => setDescription(todos.description)}
               ></button>
             </div>
 
@@ -70,7 +70,7 @@ function EditTodos({ todo }) {
                 type="button"
                 className="btn btn-danger"
                 data-bs-dismiss="modal"
-                onClick={() => setDescription(todo.description)}
+                onClick={() => setDescription(todos.description)}
               >
                 Close
               </button>
