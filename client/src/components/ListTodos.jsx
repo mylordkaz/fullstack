@@ -7,7 +7,7 @@ const ListTodos = () => {
   const deleteTodo = async (id) => {
     try {
       // eslint-disable-next-line no-unused-vars
-      await fetch(`http://localhost:10000/todos/${id}`, {
+      await fetch(`https://fullstack-todo-webapp.onrender.com/todos/${id}`, {
         method: 'DELETE',
       });
       setTodos(todos.filter((todo) => todo.todo_id !== id));
@@ -18,7 +18,9 @@ const ListTodos = () => {
 
   const getTodos = async () => {
     try {
-      const res = await fetch('http://localhost:10000/todos');
+      const res = await fetch(
+        'https://fullstack-todo-webapp.onrender.com/todos'
+      );
       const data = await res.json();
 
       setTodos(data);

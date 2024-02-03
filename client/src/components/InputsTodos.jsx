@@ -7,7 +7,7 @@ const InputTodo = () => {
     e.preventDefault();
     try {
       const body = { description };
-      await fetch('http://localhost:10000/todos', {
+      await fetch('https://fullstack-todo-webapp.onrender.com/todos', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(body),
