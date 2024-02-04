@@ -14,39 +14,31 @@ create "src" folder, store index.js & server.js in it.
 ### basic index.js syntax :
 
 ////////////////////////////////////////////////////
-const { startServer } = require('./server');
+const express = require('express');
+const cors = require('cors');
+const todosRoute = require('../routes/todos');
+
 const dotenv = require('dotenv');
-const server = startServer();
 
 dotenv.config();
 
-server.listen(process.env.BACK_PORT, () => {
-console.log('Server run, port :${BACK_PORT}');
-});
-///////////////////////////////////////////
-
-### basic server.js syntax :
-
-/////////////////////////////////////////////
-const express = require('express');
-const cors = require('express');
-
 const app = express();
-const usersRoute = require('../routes/users');
 
 app.use(express.json());
 app.use(cors());
 
-const startServer = () => {
-app.use('/users', usersRoute);
+// todos routes
+app.post('/todos', todosRoute);
+
+//test
 app.get('/', (req, res) => {
 res.send("What's up brooo ?!");
 });
 
-return app;
-};
+app.listen(process.env.PORT, () => {
+console.log('Server run');
+});
 
-module.exports = { startServer };
 ///////////////////////////////////////////////////
 
 create controllers / db / routes folder in the root
