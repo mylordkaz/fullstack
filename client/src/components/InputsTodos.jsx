@@ -12,6 +12,7 @@ const InputTodo = () => {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(body),
       });
+      setDescription('');
     } catch (err) {
       console.log(err.message);
     }
