@@ -1,5 +1,6 @@
-Welcome to my app,
+### Welcome
 
 
-This is a Todo, PERN app all in one repo. 
-testing deployment on render.
+This is a Monorepo, Todo PERN app  
+
+used for testing deployment on render.
